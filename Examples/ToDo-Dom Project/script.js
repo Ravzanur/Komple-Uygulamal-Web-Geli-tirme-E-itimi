@@ -5,13 +5,18 @@ const input = document.querySelector('#txtTaskName');
 const btnDeleteAll = document.querySelector('#btnDeleteAll');
 const taskList = document.querySelector('#task-list');
 
-
+//call event listeners
 eventListeners();
 
 function eventListeners(){
+    //submit event
     form.addEventListener('submit',addNewItem);
+
+    //delete an item
+    taskList.addEventListener('click',deleteItem);
 }
 
+//add new item
 function addNewItem(e){
 
     if(input.value === ''){
@@ -32,7 +37,13 @@ function addNewItem(e){
 
     taskList.appendChild(li);
 
-    console.log(li);
+    input.value=' ';
 
     e.preventDefault();
+}
+
+
+function deleteItem(e){
+
+    
 }
